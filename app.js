@@ -414,7 +414,7 @@ function receivedAccountLink(event) {
  * in default.json before they can access local resources likes images/videos.
  */
 function requiresServerURL(next, [recipientId, ...args]) {
-  if (SERVER_URL === "to_be_set_manually") {
+  if (SERVER_URL === process.env.SERVER_URL) {
     var messageData = {
       recipient: {
         id: recipientId
